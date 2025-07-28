@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:tools.ietf.org)",
+      "WebFetch(domain:datatracker.ietf.org)",
+      "Bash(npm view:*)",
+      "Bash(npm search \".js\")",
+      "Bash(npm search:*)",
+      "Bash(mkdir:*)",
+      "Bash(mv:*)",
+      "Bash(npm run build:*)",
+      "Bash(git init:*)",
+      "Bash(git remote add:*)",
+      "Bash(node:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": []
+  }
+}

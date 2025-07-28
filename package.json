@@ -1,0 +1,69 @@
+{
+  "name": "rfc8107-js",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "JavaScript implementation of RFC 8107 for Advertising Digital Identifiers (Ad-IDs)",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "npm run build:esm && npm run build:cjs && npm run build:types",
+    "build:esm": "cp src/ad-id.js dist/index.mjs",
+    "build:cjs": "node scripts/build-cjs.js",
+    "build:types": "node scripts/build-types.js",
+    "test": "npm run test:node && npm run test:bun && npm run test:deno",
+    "test:node": "node --test src/ad-id.spec.js",
+    "test:bun": "bun test src/ad-id.spec.js",
+    "test:deno": "deno test src/ad-id.spec.js",
+    "test:jest": "jest",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run build"
+  },
+  "keywords": [
+    "rfc8107",
+    "ad-id",
+    "adid",
+    "advertising",
+    "digital-identifier",
+    "urn",
+    "rfc",
+    "specification",
+    "uuid",
+    "identifier"
+  ],
+  "author": "kyungw00k <parksama@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kyungw00k/rfc8107-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kyungw00k/rfc8107-js/issues"
+  },
+  "homepage": "https://github.com/kyungw00k/rfc8107-js#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": [
+      "src/**/*.spec.js"
+    ]
+  }
+}
